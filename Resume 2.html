@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Allyzhon M. Cabigting</title>
+    <style>
+        /* =========================================
+           1. CSS VARIABLES (Theme Configuration)
+           ========================================= */
+        :root {
+            /* Light Mode (Default) */
+            --bg-color: #f4f7f6;
+            --container-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #555555;
+            --accent-color: #2c3e50;
+            --section-header: #2980b9;
+            --border-color: #e0e0e0;
+            --button-bg: #333;
+            --button-text: #fff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Dark Mode Class - This overrides the variables above */
+        body.dark-mode {
+            --bg-color: #121212;
+            --container-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-color: #ecf0f1;
+            --section-header: #6dd5fa;
+            --border-color: #333333;
+            --button-bg: #f4f4f4;
+            --button-text: #121212;
+            --shadow: 0 4px 6px rgba(0,0,0,0.5);
+        }
+
+        /* =========================================
+           2. GENERAL STYLING
+           ========================================= */
+        * { box-sizing: border-box; margin: 0; padding: 0; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--container-bg);
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative; /* For toggle button positioning */
+        }
+
+        /* Toggle Button */
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 100;
+        }
+        .theme-toggle:hover { opacity: 0.9; }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            object-fit: cover; /* Ensures image doesn't stretch */
+            border-radius: 50%;
+            border: 4px solid var(--section-header);
+            margin-bottom: 15px;
+        }
+
+        h1 { color: var(--section-header); margin-bottom: 5px; }
+        .contact-info { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 10px; }
+        .contact-info a { color: var(--section-header); text-decoration: none; }
+
+        /* Content Grid */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr; /* Mobile first */
+            gap: 20px;
+            padding: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .main-content { grid-template-columns: 2fr 1fr; } /* 2 columns on desktop */
+        }
+
+        /* Sections */
+        section { margin-bottom: 30px; }
+        h2 {
+            color: var(--section-header);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h3 { font-size: 1.1rem; margin-bottom: 2px; color: var(--text-main); }
+        .sub-text { font-size: 0.9rem; color: var(--text-secondary); font-style: italic; margin-bottom: 8px; }
+        
+        ul { list-style-type: none; }
+        ul.bullets { list-style-type: disc; margin-left: 20px; }
+        li { margin-bottom: 5px; }
+
+        /* Skills Tags */
+        .skill-tags span {
+            display: inline-block;
+            background-color: var(--border-color);
+            color: var(--text-main);
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin: 2px;
+            font-size: 0.85rem;
+        }
+
+        /* Personal Data Table */
+        .personal-data table { width: 100%; border-collapse: collapse; }
+        .personal-data td { padding: 5px; border-bottom: 1px solid var(--border-color); font-size: 0.9rem; }
+        .personal-data td:first-child { font-weight: bold; width: 40%; color: var(--text-secondary); }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+
+        <header>
+            <img src="Formal 1x1.jpg" alt="Allyzhon M. Cabigting" class="profile-pic">
+            <h1>Allyzhon M. Cabigting</h1>
+            <p class="contact-info">
+                Bamban, Tarlac (2317) | 09626304633 <br>
+                <a href="mailto:lancecabigting@outlook.com">lancecabigting@outlook.com</a> | 
+                <a href="https://fb.com/sappg21" target="_blank">fb.com/sappg21</a>
+            </p>
+        </header>
+
+        <div class="main-content">
+            <div class="left-col">
+                <section>
+                    <h2>Career Objective</h2>
+                    <p>Seeking a role that allows me to leverage my strengths in communication and problem-solving to drive team success and personal growth. To secure a challenging position in a reputable organization where I can expand my learnings, knowledge, and skills while contributing to the company’s success. </p>
+                </section>
+
+                <section>
+                    <h2>Work Experience</h2>
+                    
+                    <div>
+                        <h3>Customer Care</h3>
+                        <p class="sub-text">RMS Collect Phils. (iQor) | Aug 2024 – Sept 2025 </p>
+                    </div>
+                    <br>
+                    <div>
+                        <h3>Subject Matter Expert</h3>
+                        <p class="sub-text">Sutherland Global Services | May 2020 – Jan 2024 </p>
+                    </div>
+                    <br>
+                    <div>
+                        <h3>Customer Service Associate</h3>
+                        <p class="sub-text">Sutherland Global Services | Oct 2019 – May 2020 </p>
+                    </div>
+                    <br>
+                    <div>
+                        <h3>Computer Technician</h3>
+                        <p class="sub-text">M-Tech Access Computer Services | Mar 2017 – Dec 2018 </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Education</h2>
+                    <div>
+                        <h3>BS Computer Engineering (Undergrad)</h3>
+                        <p class="sub-text">Systems Plus College Foundation, Angeles City </p>
+                    </div>
+                    <div>
+                        <h3>Associate in Computer Technology</h3>
+                        <p class="sub-text">Mabalacat City College, Pampanga | June 2014 – March 2017 </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Thesis Project</h2>
+                    <h3>MCC Inventory System</h3>
+                    <p>Browser Based Inventory System for tracking and recording of supplies.</p>
+                    <p class="sub-text">Role: Designer / Programmer / Team Leader (2018-2019) </p>
+                </section>
+            </div>
+
+            <div class="right-col">
+                <section>
+                    <h2>Technical Skills</h2>
+                    <div class="skill-tags">
+                        <span>C++</span>
+                        <span>PHP</span>
+                        <span>JavaScript</span>
+                        <span>SQL</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Bootstrap</span>
+                        <span>Adobe Premiere Pro</span>
+                        <span>Adobe After Effects</span>
+                        <span>Photoshop</span>
+                        <span>Illustrator</span>
+                    </div>
+                    <br>
+                    <ul class="bullets">
+                        <li>Speed typing: 70 wpm</li>
+                        <li>Computer Hardware/Software Repair</li>
+                        <li>Can work under pressure</li>
+                    </ul> 
+                </section>
+
+                <section>
+                    <h2>Awards</h2>
+                    <ul class="bullets">
+                        <li>Highest Overall Performance Rating T-Mobile (Mar 2025)</li>
+                        <li>Norton LifeLock Highest CE Metrics (Feb 2020)</li>
+                        <li>CCNA Routing & Switching: Intro to Networks (Feb 2019)</li>
+                    </ul> 
+                </section>
+
+                <section class="personal-data">
+                    <h2>Personal Details</h2>
+                    <table>
+                        <tr><td>Age:</td><td>29 Years Old</td></tr>
+                        <tr><td>Birthdate:</td><td>August 21, 1996</td></tr>
+                        <tr><td>Birthplace:</td><td>Angeles City</td></tr>
+                        <tr><td>Religion:</td><td>Catholic</td></tr>
+                        <tr><td>Height:</td><td>179 cm</td></tr>
+                        <tr><td>Weight:</td><td>220 lbs</td></tr>
+                        <tr><td>Nationality:</td><td>Filipino</td></tr>
+                    </table> 
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const button = document.querySelector('.theme-toggle');
+            
+            // Toggle the 'dark-mode' class on the body element
+            body.classList.toggle('dark-mode');
+
+            // Update Button Text based on mode
+            if (body.classList.contains('dark-mode')) {
+                button.textContent = "☀️ Light Mode";
+            } else {
+                button.textContent = "🌙 Dark Mode";
+            }
+        }
+    </script>
+
+</body>
+</html>
